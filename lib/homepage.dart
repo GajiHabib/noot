@@ -58,8 +58,20 @@ class homepage extends StatelessWidget {
                  ),
                 SizedBox(width: 20),
                threedort(),
+             
               ],
             ),
+          
+            SliverToBoxAdapter(child: 
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.edit),
+                  Center(child: Text('top+to create poost')),
+                ],
+              ),
+            )),
           ],
         ),
       ),

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class savefolder extends StatelessWidget {
@@ -40,9 +42,11 @@ class savefolder extends StatelessWidget {
                           ),
                         );
                       },
-                      icon: Icon(
-                        Icons.add,
-                        color: Colors.black87,
+                      icon: Center(
+                        child: Icon(
+                          Icons.add,
+                          color: Colors.black87,
+                        ),
                       ),
                     ),
                   );

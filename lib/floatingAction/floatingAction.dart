@@ -32,10 +32,17 @@ class floationg extends StatelessWidget {
             TextField(),
             Expanded(
               child: Row(
-               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-              Icon(Icons.battery_unknown_rounded),
-              Icon(Icons.south_rounded)
+               IconButton(onPressed: (
+               ){
+               showDialog(context: context, builder:
+               (context) => AlertDialog(
+                title: Text('Sakib'),
+                
+               ),);
+               }, icon:   Icon(Icons.list),),
+              Icon(Icons.mic)
               ],),
             )
         
