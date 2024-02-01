@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, body_might_complete_normally_nullable
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, body_might_complete_normally_nullable, camel_case_types
 
 import 'package:flutter/material.dart';
 
@@ -34,20 +34,26 @@ class Setting extends StatelessWidget {
             child: ListView(
               scrollDirection: Axis.vertical,
             children: [
-          threescreen(datatex:'Enable Nowpad hgjhgjhghjjhkj', color: Colors.pink),
-          threescreen(datatex:'thtiggar now sutah', color: Colors.deepPurple),
-          threescreen(datatex:'thtiggar now sutah', color: const Color.fromARGB(255, 241, 203, 215)),
-          threescreen(datatex:'thtiggar now sutah', color: Colors.deepPurpleAccent),
-          threescreen(datatex:'thtiggar now sutah', color: Colors.purple),
-            threescreen(datatex:'thtiggar now sutah', color: Colors.pink),
-              threescreen(datatex:'thtiggar now sutah', color: Colors.blue),
-                threescreen(datatex:'thtiggar now sutah', color: Colors.pink),
-                  threescreen(datatex:'thtiggar now sutah', color: Colors.lightBlue),
-                    threescreen(datatex:'thtiggar now sutah', color: Colors.amber),
-                      threescreen(datatex:'thtiggar now sutah', color: Colors.cyan),
-                        threescreen(datatex:'thtiggar now sutah', color: Colors.indigo),
+             threescreen(color:Colors.amber, sak:'Enable Nowpad',
+              saki:'Take Notes anyhere by swiping', sakib:'form your screen Edg'),
+               threescreen(color:Colors.pinkAccent, sak:'Trigger Zone Setup',
+              saki:'Enable Nowpad to configure', sakib:'Trigger Zone'),
+               threescreen(color:Colors.deepPurpleAccent, sak:'Reopon Last Note',
+              saki:'When Nowpad is Launched', sakib:'Reopon'),
+              threescreen(color: Color.fromARGB(255, 40, 9, 125), sak:'Hide Active Natification',
+              saki:'turn of or silence`note pad active form app', sakib:'settings to hide this active natification'),
+                threescreen(color: Colors.cyan, sak:'Default folder',
+              saki:'note create in nowpad save here', sakib:'My nots by Default'),
             ],
           ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(children: [
+              Icon(Icons.list_rounded,size:50,),
+              SizedBox(width: 40,),
+              Text('Genarel',style: TextStyle(fontSize: 50),)
+            ],),
           )
         ],
        ),
@@ -56,9 +62,11 @@ class Setting extends StatelessWidget {
   }
 }
 class threescreen extends StatelessWidget {
-  final String datatex;
+  final String sak;
+  final String saki;
+  final String sakib;
   final Color color;
-  const threescreen({super.key, required this.datatex, required this.color});
+  const threescreen({super.key, required this.color, required this.sak, required this.saki, required this.sakib});
 
   @override
   Widget build(BuildContext context) {
@@ -74,21 +82,23 @@ class threescreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(datatex,style: TextStyle(fontSize:20,color: Colors.black87),),
-                            Text(datatex),
-                            Text(datatex),
+                            Text(sak,style: TextStyle(fontSize:25,color: Colors.black87),),
+                            Text(saki,style: TextStyle(fontSize:14,color: Colors.black87),),
+                            Text(sakib,style: TextStyle(fontSize:14,color: Colors.black87),),
                           ],
-                        ),SizedBox(width: 10,),
+                        ),
+                        SizedBox(width:40,),
                        Switch(
                         thumbColor:MaterialStateProperty.all(color),
                         value:Paint.enableDithering, 
                        onChanged:(value) {
                          
-                       },)
+                       },),
                       ],
                     ),
                   ),

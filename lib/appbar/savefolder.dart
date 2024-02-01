@@ -2,9 +2,15 @@
 
 import 'package:flutter/material.dart';
 
-class savefolder extends StatelessWidget {
+class savefolder extends StatefulWidget {
   const savefolder({super.key});
 
+  @override
+  State<savefolder> createState() => _savefolderState();
+}
+
+class _savefolderState extends State<savefolder> {
+    // List<Folder> folders = [];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,7 +40,10 @@ class savefolder extends StatelessWidget {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Text('Cancel'),
-                                    Text('create'),
+                                   TextButton(onPressed:(){
+                                    
+                                   },
+                                    child:  Text('create'),),
                                   ],
                                 ),
                               ),
